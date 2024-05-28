@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+{
+    main, #container-image
+    {
+        width: 700px;
+    }
+    #container-image
+    {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px)
+{
+    main, #container-image
+    {
+        width: 800px;
+    }
+    #container-image
+    {
+        height: 300px;
+    }
+}
+@media screen and (min-width: 1201px)
+{
+    main, #container-image
+    {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 1000px;
+        height: auto;
+    }
+    #container-inputs
+    {
+        width: 700px;
+    }
+    #container-image > img
+    {
+        border-radius: 0px 10px 10px 0px;
+    }
+    #container-image ul
+    {
+        left: 10%;
+        
+    }
+
+}
