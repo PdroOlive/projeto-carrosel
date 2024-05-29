@@ -8,7 +8,7 @@ let onImgMonthly = document.querySelector("#image-monthly");
 let textMonthly = document.querySelector("#image-monthly ul");
 let onImgWeekly = document.querySelector("#image-weekly");
 let textWeekly = document.querySelector("#image-weekly ul");
-
+const card = document.getElementById("icard");
 const imageVisa = document.getElementById("image-visa");
 const imageElo = document.getElementById("image-elo");
 const imageMaster = document.getElementById("image-master");
@@ -33,13 +33,6 @@ const priceMonth = 120;
 const priceWeek = 64.99;
 let calcResult = 0;
 const regCharacter = /^[a-záàâãéèêíïóôõöúçñ ]+$/i;
-
-window.onload=function()
-{
-    const card = document.getElementById("icard");
-    card.addEventListener("keypress", cardInsert);
-}
-
 
 
 function isError(error)
@@ -341,8 +334,7 @@ function nameLength(nameLength)
 
 
 window.setInterval(nextImage, 3000);
-
-
+card.addEventListener("keypress", cardInsert);
 card.addEventListener("input", checkCardFlag);
 inputName.addEventListener("input", checkName);
 window.addEventListener("load", parcelCard); 
