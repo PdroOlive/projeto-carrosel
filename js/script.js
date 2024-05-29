@@ -332,9 +332,11 @@ function nameLength(nameLength)
     return nameArray.length >= 2;
 }
 
-
-window.setInterval(nextImage, 3000);
-window.addEventListener("keypress", cardInsert);
-window.addEventListener("input", checkCardFlag);
-inputName.addEventListener("input", checkName);
-window.addEventListener("load", parcelCard); 
+document.addEventListener("DOMContentLoaded", () =>
+{
+    window.setInterval(nextImage, 3000);
+    window.addEventListener("keypress", cardInsert);
+    window.addEventListener("input", checkCardFlag);
+    inputName.addEventListener("input", checkName);
+    window.addEventListener("load", parcelCard); 
+});
