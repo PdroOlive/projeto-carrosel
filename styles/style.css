@@ -9,7 +9,7 @@
     font-family: "Montserrat", sans-serif;
     color: rgba(255, 255, 255, 0.705);
     -webkit-tap-highlight-color: transparent;
-    height: -moz-available;
+    
 }
 
 
@@ -75,6 +75,7 @@ body
     overflow: hidden;
     box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.658);
     margin-bottom: 1em;
+    height: -moz-available;
 }
 
 .carousel-images
@@ -88,6 +89,7 @@ body
 {
     filter: brightness(30%) grayscale(100);
     width: 100%;
+    height: -moz-available;
 }
 .carousel h1 
 {
