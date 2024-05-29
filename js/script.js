@@ -333,7 +333,7 @@ function nameLength(nameLength)
 }
 
 
-setInterval(nextImage, 3000);
+window.setInterval(nextImage, 3000);
 card.addEventListener("keypress", cardInsert);
 card.addEventListener("keyup", checkCardFlag);
 inputName.addEventListener("input", checkName);
