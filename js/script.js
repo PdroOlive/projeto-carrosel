@@ -334,7 +334,7 @@ function nameLength(nameLength)
 
 
 window.setInterval(nextImage, 3000);
-card.addEventListener("keypress", cardInsert);
+window.addEventListener("keypress", cardInsert);
 card.addEventListener("input", checkCardFlag);
 inputName.addEventListener("input", checkName);
 window.addEventListener("load", parcelCard); 
