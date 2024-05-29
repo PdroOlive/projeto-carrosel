@@ -20,7 +20,7 @@ input::-webkit-inner-spin-button
 }
 
 body::-webkit-scrollbar,
-body::-moz-srollbar
+body::-moz-scrollbar
 {
     background-color: #011F26;
     width: 10px;
