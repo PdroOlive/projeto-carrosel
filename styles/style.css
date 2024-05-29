@@ -19,7 +19,8 @@ input::-webkit-inner-spin-button
     -webkit-appearance: none;
 }
 
-body::-webkit-scrollbar
+body::-webkit-scrollbar,
+body::-moz-srollbar
 {
     background-color: #011F26;
     width: 10px;
