@@ -334,11 +334,7 @@ function nameLength(nameLength)
 
 
 window.setInterval(nextImage, 3000);
-document.addEventListener("DOMContentLoaded", () =>
-{
-    card.addEventListener("keypress", cardInsert);
-})
-
+card.addEventListener("keypress", cardInsert);
 card.addEventListener("input", checkCardFlag);
 inputName.addEventListener("input", checkName);
 window.addEventListener("load", parcelCard); 
