@@ -19,9 +19,15 @@
     </header>
     <main>
         <form id="container-form">
-            <input type="number" name="peso" id="ipeso" placeholder="Peso - Kg">
+            <div>
+                <input type="number" name="peso" id="ipeso" placeholder="Peso - Kg">
+                <span>Kg</span>
+            </div>
             <button>IMC</button>
-            <input type="number" name="altura" id="ialtura" placeholder="Altura - M">
+            <div>
+                <input type="number" name="altura" id="ialtura" placeholder="Altura - M" autocomplete="off">
+                <span>m</span>
+            </div>
         </form>
     </main>
     <script src="js/imc-script.js"></script>

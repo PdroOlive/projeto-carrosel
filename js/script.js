@@ -174,7 +174,6 @@ function checkCVV()
     if (cvvCurrent == ``)
     {
         inputCVV.style.outline = `2px solid white`;
-        validatedInput.innerText = ``;
     }
     else if(cvvCurrent > 3 || cvvCurrent < 3)
     {
