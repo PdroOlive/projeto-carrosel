@@ -28,8 +28,8 @@ body::-webkit-scrollbar-thumb
 {
     --colorOne: #011F26;
     --colorTwo: #a5a692;
-    --colorThree: #BFB78F; 
-    --colorShadow: rgba(255, 255, 255, 0.363);
+    --colorThree: #BFB78F;
+    --colorShadow: rgba(255, 255, 255, 0.164);
     --imgColor: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
 

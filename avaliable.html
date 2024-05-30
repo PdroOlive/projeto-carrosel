@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/imc-style.css">
     <title>Avaliação</title>
 </head>
 <body>
-    
+    <header id="container-header">
+        <nav id="container-menu" class="menu">
+            <ul>
+                <li><a href="index.html">Planos</a></li>
+                <li><a href="avaliable.html">Avaliação</a></li>
+                <li><a href="about.html">Nosso Espaço</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="container-form">
+            <input type="number" name="peso" id="ipeso" placeholder="Peso - Kg">
+            <button>IMC</button>
+            <input type="number" name="altura" id="ialtura" placeholder="Altura - M">
+        </form>
+    </main>
+    <script src="js/imc-script.js"></script>
 </body>
 </html>

@@ -44,19 +44,6 @@ const regCharacter = /^[a-záàâãéèêíïóôõöúçñ ]+$/i;
 
 
 
-window.onscroll = () =>
-{
-    let menuScroll = document.getElementById("#container-menu");
-
-    if(window.scrollY > 10)
-    {
-        menuScroll.style.position = `fixed`;
-    }
-    else
-    {
-        menuScroll.style.position = `absolute`;
-    }
-}
 
 function isError(error)
 {
@@ -356,12 +343,7 @@ function nameLength(nameLength)
 }
 
 
-onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
-onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
-onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
-onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
-onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
-onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
+
 document.addEventListener("DOMContentLoaded", () =>
 {
     window.setInterval(nextImage, 3000);
@@ -373,6 +355,12 @@ document.addEventListener("DOMContentLoaded", () =>
     inputDate.addEventListener("keypress", formatDate);
     inputDate.addEventListener("input", checkErrorDate);
     checkButton.addEventListener("click", () => ticketSaleOff(price));
+    onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
+    onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
+    onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
+    onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
+    onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
+    onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
     
 });
 window.addEventListener("load", () => showValue(ticketSaleOff(price), valueTot));
