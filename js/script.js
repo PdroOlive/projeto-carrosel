@@ -27,6 +27,12 @@ const containerPix = document.getElementById("container-payment-pix");
 const op = document.getElementById("option1");
 const inputParcel = document.querySelector("#iparcel");
 const inputName = document.getElementById("iname");
+const menuCard = document.getElementById("menu-card");
+const menuPix = document.getElementById("container-pix");
+const closeExec = document.getElementById("close-card");
+const closePix = document.getElementById("close-pix");
+const checkButton = document.getElementById("check-button");
+
 
 let price = 1368;
 const priceMonth = 120;
@@ -34,6 +40,23 @@ const priceWeek = 64.99;
 let calcResult = 0;
 const regCharacter = /^[a-záàâãéèêíïóôõöúçñ ]+$/i;
 
+
+
+
+
+window.onscroll = () =>
+{
+    let menuScroll = document.getElementById("#container-menu");
+
+    if(window.scrollY > 10)
+    {
+        menuScroll.style.position = `fixed`;
+    }
+    else
+    {
+        menuScroll.style.position = `absolute`;
+    }
+}
 
 function isError(error)
 {
@@ -332,11 +355,34 @@ function nameLength(nameLength)
     return nameArray.length >= 2;
 }
 
+
+onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
+onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
+onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
+onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
+onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
+onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
 document.addEventListener("DOMContentLoaded", () =>
 {
     window.setInterval(nextImage, 3000);
     window.addEventListener("keypress", cardInsert);
     window.addEventListener("input", checkCardFlag);
     window.addEventListener("input", checkName);
-    window.addEventListener("load", parcelCard); 
+    window.addEventListener("load", parcelCard);
+    inputCVV.addEventListener("input", checkCVV);
+    inputDate.addEventListener("keypress", formatDate);
+    inputDate.addEventListener("input", checkErrorDate);
+    checkButton.addEventListener("click", () => ticketSaleOff(price));
+    
 });
+window.addEventListener("load", () => showValue(ticketSaleOff(price), valueTot));
+window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
+window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
+menuCard.addEventListener("click", () => showCard(containerCard));
+menuCard.addEventListener("mouseenter", () => effectApply(menuEffect));
+menuCard.addEventListener("mouseleave", () => effectDisable(menuEffect));
+closeExec.addEventListener("click", () => closeCard(containerCard));
+menuPix.addEventListener("mouseenter", () => effectApply(pixEffect));
+menuPix.addEventListener("mouseleave", () => effectDisable(pixEffect))
+menuPix.addEventListener("click", () => showCard(containerPix));
+closePix.addEventListener("click", () => closeCard(containerPix));

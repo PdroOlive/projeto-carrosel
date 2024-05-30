@@ -6,7 +6,7 @@
     <title>Pagamento</title>
     <link rel="stylesheet" href="styles/payment-style.css">
 </head>
-<body onload="showValue(priceWeek, containerTotWeek)">
+<body>
     <main>
         <div id="container-image">
             <img src="img/semanal.jpg" alt="Foto Anual">
@@ -18,7 +18,8 @@
                 <li><img class="image-svg" src="img/washer.svg" alt=""> Sem sorteios</li>
             </ul>     
         </div>
-        <section onclick="showCard(containerCard)" onmouseenter="effectApply(menuEffect)" onmouseleave="effectDisable(menuEffect)" class="container-menu">
+
+        <section id="menu-card" class="container-menu">
             <div id="container-card-menu" class="menu">
                 <div id="container-image-card"><img src="img/credit-card.svg" alt="Card Image"></div>
                 <span>Cartão (Crédito ou Débito)</span>
@@ -27,27 +28,27 @@
         </section>
 
         <section id="container-input-card">
-            <span id="close-card" class="close" onclick="closeCard(containerCard)"><img src="img/close.svg" alt=""></span>
+            <span id="close-card" class="close"><img src="img/close.svg" alt=""></span>
             <input type="text" name="name" id="iname" placeholder="Nome impresso no Cartão">
             <ul>
                 <li class="card" id="card-elo"><img id="image-elo" src="img/elo.svg" alt="Elo Icon"></li>
                 <li class="card" id="card-master"><img id="image-master" src="img/mastercard.svg" alt="MasterCard Icon"></li>
                 <li class="card" id="card-visa"><img id="image-visa" src="img/visa.svg" alt="Visa Icon"></li>
             </ul>
-            <input onkeyup="checkCardFlag()" onkeypress="cardInsert()" type="text" maxlength="19" name="card" id="icard" placeholder="Digite Número do Cartão" autocomplete="off">
+            <input type="text" maxlength="19" name="card" id="icard" placeholder="Digite Número do Cartão" autocomplete="off">
             <span id="span">(Crédito ou Débito)</span>
             <div id="container-info-card">
                 <div id="cvv-infos">
-                    <input oninput="checkCVV()" type="text" name="cvv" id="icvv" placeholder="CVV" autocomplete="off">
+                    <input type="text" name="cvv" id="icvv" maxlength="3" placeholder="CVV" autocomplete="off">
                 </div>
                 <span id="input-validated" class="showoff-cvv"></span>
                 <div id="date-infos">
-                    <input onkeypress="formatDate()" oninput="checkErrorDate()" type="text" name="date" id="idate" placeholder="MM/YY" maxlength="5" autocomplete="off">
+                    <input type="text" name="date" id="idate" placeholder="MM/YY" maxlength="5" autocomplete="off">
                 </div>
             </div>
         </section>
 
-        <section id="container-pix" class="container-menu" onclick="showCard(containerPix)" onmouseenter="effectApply(pixEffect)" onmouseleave="effectDisable(pixEffect)">
+        <section id="container-pix" class="container-menu">
             <div class="menu">
                 <div id="container-img-pix">
                     <img src="img/pix.svg" alt="Pix Image">
@@ -58,7 +59,7 @@
         </section>
 
         <section id="container-payment-pix">
-            <span id="close-pix" class="close" onclick="closeCard(containerPix)"><img src="img/close.svg" alt=""></span>
+            <span id="close-pix" class="close"><img src="img/close.svg" alt=""></span>
             <div id="container-qrcode">
                 <img src="img/qr-code.svg" alt="">
             </div>

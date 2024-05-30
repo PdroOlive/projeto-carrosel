@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/payment-style.css">
     <link rel="stylesheet" href="styles/media-payment.css">
 </head>
-<body onload="showValue(ticketSaleOff(price), valueTot)">
+<body>
     <main>
         <div id="container-image">
             <img src="img/anual.jpg" alt="Foto Anual">
@@ -19,16 +19,19 @@
                 <li><img class="image-svg" src="img/washer.svg" alt=""> <p>Participa dos sorteios mensais</p></li>
             </ul>
         </div>
+
         <section id="container-inputs">
-            <section onclick="showCard(containerCard)" onmouseenter="effectApply(menuEffect)" onmouseleave="effectDisable(menuEffect)" class="container-menu">
+
+            <section id="menu-card" class="container-menu">
                 <div id="container-card-menu" class="menu">
                     <div id="container-image-card"><img src="img/credit-card.svg" alt="Card Image"></div>
                     <span>Cartão (Crédito ou Débito)</span>
                 </div>
                 <div class="progress-effect" id="progress-card"></div>
             </section>
+
             <section id="container-input-card">
-                <span id="close-card" class="close" onclick="closeCard(containerCard)"><img src="img/close.svg" alt=""></span>
+                <span id="close-card" class="close"><img src="img/close.svg" alt=""></span>
                 <input type="text" name="name" id="iname" placeholder="Digite nome impresso no Cartão" autocomplete="off">
                 <ul>
                     <li class="card" id="card-elo"><img id="image-elo" src="img/elo.svg" alt="Elo Icon"></li>
@@ -51,15 +54,16 @@
                 </select>
                 <div id="container-info-card">
                     <div id="cvv-infos">
-                        <input oninput="checkCVV()" type="text" name="cvv" id="icvv" maxlength="3" placeholder="CVV" autocomplete="off">
+                        <input type="text" name="cvv" id="icvv" maxlength="3" placeholder="CVV" autocomplete="off">
                     </div>
                     
                     <div id="date-infos">
-                        <input onkeypress="formatDate()" oninput="checkErrorDate()" type="text" name="date" id="idate" placeholder="MM/YY" maxlength="5" autocomplete="off">
+                        <input type="text" name="date" id="idate" placeholder="MM/YY" maxlength="5" autocomplete="off">
                     </div>
                 </div>
             </section>
-            <section id="container-pix" class="container-menu" onclick="showCard(containerPix)" onmouseenter="effectApply(pixEffect)" onmouseleave="effectDisable(pixEffect)">
+
+            <section id="container-pix" class="container-menu" onclick="">
                 <div class="menu">
                     <div id="container-img-pix">
                         <img src="img/pix.svg" alt="Pix Image">
@@ -68,17 +72,21 @@
                 </div>
                 <div class="progress-effect" id="progress-pix"></div>
             </section>
+
             <section id="container-payment-pix">
-                <span id="close-pix" class="close" onclick="closeCard(containerPix)"><img src="img/close.svg" alt=""></span>
+                <span id="close-pix" class="close"><img src="img/close.svg" alt=""></span>
                 <div id="container-qrcode">
                     <img src="img/qr-code.svg" alt="">
                 </div>
-                <span>Mire a câmera do celular para fazer o pagamento ou se preferir clique no link abaixo: <a href="https://qr.codes/gPM8yD" target="_blank" rel="noopener noreferrer">clique aqui</a></span>
+                <span>
+                    Mire a câmera do celular para fazer o pagamento ou se preferir clique no link abaixo: <a href="https://qr.codes/gPM8yD" target="_blank" rel="noopener noreferrer">clique aqui</a>
+                </span>
             </section>
+
             <section id="container-payment-value">
                 <div id="container-promo">
                     <input type="text" name="cupom" id="icupom" maxlength="6" autocomplete="off" placeholder="Cupom">
-                    <button onclick="ticketSaleOff(price)"><img src="img/check.svg" alt=""></button>
+                    <button id="check-button"><img src="img/check.svg" alt=""></button>
                 </div>
                 <div id="saleoff"></div>
                 <div id="container-value">Valor Total:</div>

@@ -111,6 +111,58 @@ span
     
 }
 
+#container-menu
+{
+    width: 400px;
+    position: absolute;
+    z-index: 1;
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -26%);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.281);
+    border-radius: 10px;
+    padding-block: 10px;
+    background-color: rgb(0, 0, 0);
+}
+#container-menu > ul, li
+{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    transition: filter 0.5s ease-in-out;
+}
+#container-menu > ul a
+{
+    text-decoration: none;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+#container-menu > ul a::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+}
+#container-menu > ul a:hover::after
+{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#container-menu > ul:hover > :not(:hover)
+{
+     
+    filter: blur(1px);
+}
+
 
 #container-content p 
 {
