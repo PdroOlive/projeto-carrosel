@@ -63,7 +63,8 @@ main
     border-radius: 10px;
     box-shadow: 0px 0px 5px var(--colorShadowOne);
     border: none;
-    transition: box-shadow 0.5s ease-in-out;
+    transition: box-shadow 0.5s ease-in-out, outline 0.5s ease-in-out;
+    
 }
 #container-form input:focus
 {
@@ -71,12 +72,40 @@ main
     outline: none;
 }
 
-#container-form > div span
+.span-weight
 {
-
-    margin: 0px;
-    
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.7);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out, opacity 0.5s ease-in-out, color 0.5s ease-in-out;
 }
+
+.weight-span
+{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(0.9);
+    transform-origin: bottom;
+}
+
+.span-height
+{
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.7);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out, opacity 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.height-span
+{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(0.9);
+    transform-origin: bottom;
+}
+
 
 button
 {
