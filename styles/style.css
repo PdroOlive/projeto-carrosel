@@ -31,10 +31,6 @@ input::-webkit-inner-spin-button
     padding-inline: 2px;
 }
 
-::-webkit-scrollbar:hover
-{
-    width: 10px;
-}
 
 ::-webkit-scrollbar-thumb
 {
@@ -169,6 +165,7 @@ body
     object-fit: cover;
     filter: brightness(30%) grayscale(100);
     width: 100vw;
+    height: 100%;
 }
 .carousel h1 
 {
