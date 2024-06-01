@@ -3,6 +3,10 @@ const inputHeight = document.getElementById("ialtura");
 const spanHeight = document.getElementById("span-height");
 const spanWeight = document.getElementById("span-weight");
 const buttonIMC = document.getElementById("button-imc");
+const downloadFile = document.getElementById("file");
+const image = document.getElementById("image");
+
+
 function discoverError(input, span)
 {
     input.style.outline = `2px solid red`;
@@ -78,23 +82,35 @@ function outputIMC()
 {
     if(discoverIMC() <= 18.5)
     {
-        containerOutput.innerHTML = `Abaixo do Peso`;
+        downloadFile.href = `dieta-para-ganhar-massa.pdf`;
+        downloadFile.download = `dieta-para-ganhar-massa.pdf`;
+        downloadFile.type = `application/pdf`;
+        downloadFile.innerHTML = `DIETA PARA GANHAR MASSA`;
+        downloadFile.classList.add("show-file");
     }
     else if(discoverIMC() >= 18.6 && discoverIMC() <= 24.9)
     {
-        containerOutput.innerHTML = `Peso Ideal!! Continue na pegada`;
+        downloadFile.href = `dieta-para-ganhar-massa.pdf`;
+        downloadFile.download = `dieta-para-ganhar-massa.pdf`;
+        downloadFile.type = `application/pdf`;
+        downloadFile.innerHTML = `DIETA PARA GANHAR MASSA`;
+        downloadFile.classList.add("show-file");
     }
     else if(discoverIMC() >= 25 && discoverIMC() <= 29.9)
     {
-        containerOutput.innerHTML = `Sobrepeso recomendamos que comece a se cuidar`;
+        downloadFile.href = `dieta-para-perder-peso.pdf`;
+        downloadFile.download = `dieta-para-perder-peso.pdf`;
+        downloadFile.type = `application/pdf`;
+        downloadFile.innerHTML = `DIETA PARA PERDER PESO`;
+        downloadFile.classList.add("show-file")
     }
-    else if(discoverIMC() >= 30 && discoverIMC() <= 34.9)
+    else if(discoverIMC() >= 30)
     {
-        containerOutput.innerHTML = `Obesidade grau I`;
-    }
-    else if(discoverIMC() >= 35)
-    {
-        
+        downloadFile.href = `dieta-para-perder-peso.pdf`;
+        downloadFile.download = `dieta-para-perder-peso.pdf`;
+        downloadFile.type = `application/pdf`;
+        downloadFile.innerHTML = `DIETA PARA PERDER PESO`;
+        downloadFile.classList.add("show-file");
     }
 }
 
