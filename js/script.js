@@ -133,7 +133,7 @@ function checkCardFlag()
 function showValue(num, container)
 {
     let formatPrice = num.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})
-    container.innerText = `Valor Total: ${formatPrice}`;
+    container.innerHTML = `${formatPrice}`;
     container.style.opacity = `1`;
     container.style.visibility = `visible`;
 }
@@ -146,7 +146,7 @@ function ticketSaleOff(num)
     if(inputTicket === ticket)
     {
         saleOff.innerText = `Desconto de 5% Off!!`;                           
-        valueTot.innerText = `Valor Total: ${(calcResult = (num - ((5/100) * num)).toLocaleString("pt-BR" , {style: "currency", currency: "BRL"}))}`;
+        valueTot.innerText = `${(calcResult = (num - ((5/100) * num)).toLocaleString("pt-BR" , {style: "currency", currency: "BRL"}))}`;
         op.innerText = `1x ${(calcResult = (num - ((5/100) * num)).toLocaleString("pt-BR" , {style: "currency", currency: "BRL"}))}`;
     }
     return num
@@ -155,14 +155,6 @@ function ticketSaleOff(num)
 
 
 
-function cardInsert()
-{
-    let cardLength = carD.value.length;
-    if(cardLength === 4 || cardLength === 9 || cardLength === 14)
-    {
-        carD.value += " ";
-    }
-}
 
 
 function checkCVV()
@@ -190,11 +182,7 @@ function checkCVV()
 
 function formatDate()
 {
-    let dataNew = inputDate.value.length;
-    if(dataNew === 2)
-    {
-        inputDate.value += "/";
-    }
+    
     
 }
 function checkErrorDate()
@@ -328,21 +316,33 @@ function nameLength(nameLength)
 
 
 setInterval(nextImage, 3000);
-carD.addEventListener("keypress", cardInsert);
+carD.addEventListener("keypress", () =>
+{
+    let cardLength = carD.value.length;
+    if(cardLength === 4 || cardLength === 9 || cardLength === 14)
+    {
+        carD.value += " ";
+    }
+});
+inputDate.addEventListener("keypress", () =>
+    {
+        let dataNew = inputDate.value.length;
+        if(dataNew === 2)
+        {
+            inputDate.value += "/";
+        }
+    });
 carD.addEventListener("input", checkCardFlag);
 inputName.addEventListener("input", checkName);
 inputParcel.addEventListener("load", parcelCard);
 inputCVV.addEventListener("input", checkCVV);
-inputDate.addEventListener("keypress", formatDate);
 inputDate.addEventListener("input", checkErrorDate);
 checkButton.addEventListener("click", () => ticketSaleOff(price));
 menuCard.addEventListener("click", () => showCard(containerCard));
 closeExec.addEventListener("click", () => closeCard(containerCard));
 menuPix.addEventListener("click", () => showCard(containerPix));
 closePix.addEventListener("click", () => closeCard(containerPix));
-showValue(ticketSaleOff(price), valueTot);
-showValue(priceMonth, containerTotMonth);
-showValue(priceWeek, containerTotWeek);
+
 
 
 onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
@@ -351,4 +351,6 @@ onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonth
 onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
 onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
 onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
-
+valueTot.addEventListener("load", showValue(ticketSaleOff(price), valueTot));
+containerTotMonth.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
+containerTotWeek.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
