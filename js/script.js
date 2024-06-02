@@ -20,9 +20,7 @@ const saleOff = document.getElementById("saleoff");
 const inputCVV = document.getElementById("icvv");
 const validatedInput = document.getElementById("input-validated");
 const inputDate = document.getElementById("idate");
-const menuEffect = document.getElementById("progress-card");
 const containerCard = document.getElementById("container-input-card");
-const pixEffect = document.getElementById("progress-pix");
 const containerPix = document.getElementById("container-payment-pix");
 const op = document.getElementById("option1");
 const inputParcel = document.querySelector("#iparcel");
@@ -216,18 +214,6 @@ function checkErrorDate()
     }
 }
 
-function effectApply(effect)
-{
-    effect.style.width = `100%`;
-    effect.style.background = `white`;
-}
-function effectDisable(effect)
-{
-    effect.style.width = `0%`;
-}
-
-
-
 function showCard(container)
 {
     if(innerWidth >= 1201)
@@ -341,10 +327,16 @@ function nameLength(nameLength)
     return nameArray.length >= 2;
 }
 
-
+onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
+onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
+onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
+onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
+onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
+onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
 
 document.addEventListener("DOMContentLoaded", () =>
 {
+    
     window.setInterval(nextImage, 3000);
     window.addEventListener("keypress", cardInsert);
     window.addEventListener("input", checkCardFlag);
@@ -354,22 +346,13 @@ document.addEventListener("DOMContentLoaded", () =>
     inputDate.addEventListener("keypress", formatDate);
     inputDate.addEventListener("input", checkErrorDate);
     checkButton.addEventListener("click", () => ticketSaleOff(price));
-    onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
-    onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
-    onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
-    onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
-    onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
-    onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
+    
     
 });
 window.addEventListener("load", () => showValue(ticketSaleOff(price), valueTot));
 window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
 window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
 menuCard.addEventListener("click", () => showCard(containerCard));
-menuCard.addEventListener("mouseenter", () => effectApply(menuEffect));
-menuCard.addEventListener("mouseleave", () => effectDisable(menuEffect));
 closeExec.addEventListener("click", () => closeCard(containerCard));
-menuPix.addEventListener("mouseenter", () => effectApply(pixEffect));
-menuPix.addEventListener("mouseleave", () => effectDisable(pixEffect))
 menuPix.addEventListener("click", () => showCard(containerPix));
 closePix.addEventListener("click", () => closeCard(containerPix));

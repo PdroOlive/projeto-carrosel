@@ -50,19 +50,19 @@ button
     cursor: pointer;
     background-color: #00000000;
     transform: scale(1.0);
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.164);
+    box-shadow: 0px 0px 5px var(--colorShadowOne);
     backdrop-filter: blur(30px);
-    transition: box-shadow 0.3s ease-in-out, transform 0.2s;
+    transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-out;
     letter-spacing: 2px;
 }
 button:hover
 {
-    box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.274);
+    box-shadow: 0px 0px 5px var(--colorShadowTwo);
 }
 
 button:active
 {
-    box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.438);
+    box-shadow: 0px 0px 5px var(--colorShadowThree);
     transform: scale(0.97);
 }
 
@@ -75,8 +75,6 @@ body
     background-attachment: fixed;
     height: 100vh;
     position: relative;
-    overflow: overlay;
-    scrollbar-base-color: transparent;
 }
 
 #container-header
@@ -94,8 +92,7 @@ body
     top: 0;
     left: 50%;
     transform: translate(-50%);
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.281);
-    background-color: rgba(0, 0, 0, 0.637);
+    background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(30px);
     display: flex;
     justify-content: center;
@@ -146,10 +143,10 @@ body
 {
     position: relative;
     max-width: 100vw;
-    height: 300px;
+    height: 292px;
     margin: auto;
     overflow: hidden;
-    box-shadow: 0px 0px 10px var(--colorShadowOne);
+    box-shadow: 0px 0px 5px var(--colorShadowOne);
     border-radius: 0% 0% 20% 20%;
 }
 
@@ -160,12 +157,10 @@ body
     width: 100vw;
 }
 
-.carousel-images>img 
+.carousel-images > img 
 {
-    object-fit: cover;
     filter: brightness(30%) grayscale(100);
     width: 100vw;
-    height: 100%;
 }
 .carousel h1 
 {
@@ -236,7 +231,6 @@ span
     position: relative;
     width: 400px;
     height: 300px;
-    margin: auto;
     filter: grayscale(100%);
     transition: height 0.5s;
 }
@@ -254,7 +248,7 @@ span
 
 .container-img > img:hover 
 {
-    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.363);
+    box-shadow: 0px 0px 5px var(--colorShadowThree);
 }
 
 .image-svg
@@ -266,14 +260,13 @@ span
 {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     font-size: 0.9rem;
     list-style: none;
-    transform: translate(-50%, -50%);
+    transform: translate(-60%, -50%);
     white-space: nowrap;
     display: flex;
     flex-direction: column;
-    gap: 30px;
     font-weight: 600;
     visibility: hidden;
     opacity: 0;
@@ -285,6 +278,7 @@ span
 {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 4px;
 }
 
