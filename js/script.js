@@ -52,14 +52,13 @@ function isValid(valid)
     valid.style.outline = `2px solid #A5E381`;
 }
 
-function createObjectCard(height, text)
+function createObjectCard(height)
 {
-    this.height = height,
-    this.text = text
+    this.height = height;
 }
-let imgYearly = new createObjectCard("500px", `Beneficio`);
-let imgMonthly = new createObjectCard("500px", `Olar`);
-let imgWeekly = new createObjectCard("500px", `oiiii`);
+let imgYearly = new createObjectCard("500px");
+let imgMonthly = new createObjectCard("500px");
+let imgWeekly = new createObjectCard("500px");
 
 
 function nextImage() 
@@ -87,6 +86,12 @@ function imgSwitchOff(image, text)
     text.style.opacity = `0`;
     image.style.height = ``;
 }
+onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
+onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
+onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
+onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
+onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
+onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
 
 function flagOn(flag)
 {
@@ -262,7 +267,6 @@ function parcelCard()
     for(let i = 0; i <= 9; i++)
     {
         res = price / i;
-        console.log(res)
         if(res.toFixed(2) === "1368.00")
         {
             op.innerText = `1x ${res.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}`;
@@ -329,27 +333,23 @@ function nameLength(nameLength)
 
 
 
-    
-window.setInterval(nextImage, 3000);
-card.addEventListener("keypress", cardInsert);
-card.addEventListener("input", checkCardFlag);
-window.addEventListener("input", checkName);
-window.addEventListener("load", parcelCard);
-inputCVV.addEventListener("input", checkCVV);
-inputDate.addEventListener("keypress", formatDate);
-inputDate.addEventListener("input", checkErrorDate);
-checkButton.addEventListener("click", () => ticketSaleOff(price));
+document.addEventListener("DOMContentLoaded", () =>
+{
+    window.setInterval(nextImage, 3000);
+    card.addEventListener("keypress", cardInsert);
+    card.addEventListener("input", checkCardFlag);
+    window.addEventListener("input", checkName);
+    window.addEventListener("load", parcelCard);
+    inputCVV.addEventListener("input", checkCVV);
+    inputDate.addEventListener("keypress", formatDate);
+    inputDate.addEventListener("input", checkErrorDate);
+    checkButton.addEventListener("click", () => ticketSaleOff(price));
+    window.addEventListener("load", () => showValue(ticketSaleOff(price), valueTot));
+    window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
+    window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
+    menuCard.addEventListener("click", () => showCard(containerCard));
+    closeExec.addEventListener("click", () => closeCard(containerCard));
+    menuPix.addEventListener("click", () => showCard(containerPix));
+    closePix.addEventListener("click", () => closeCard(containerPix));
+});
 
-window.addEventListener("load", () => showValue(ticketSaleOff(price), valueTot));
-window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
-window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
-menuCard.addEventListener("click", () => showCard(containerCard));
-closeExec.addEventListener("click", () => closeCard(containerCard));
-menuPix.addEventListener("click", () => showCard(containerPix));
-closePix.addEventListener("click", () => closeCard(containerPix));
-onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
-onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
-onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
-onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
-onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
-onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
