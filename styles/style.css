@@ -161,7 +161,7 @@ body
 {
     filter: brightness(30%) grayscale(100);
     width: 100vw;
-    height: 300px;
+    min-height: 300px;
 }
 .carousel h1 
 {

@@ -327,16 +327,16 @@ function nameLength(nameLength)
     return nameArray.length >= 2;
 }
 
-onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
-onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
-onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
-onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
-onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
-onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
+
 
 document.addEventListener("DOMContentLoaded", () =>
 {
-    
+    onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
+    onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
+    onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
+    onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
+    onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
+    onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
     window.setInterval(nextImage, 3000);
     window.addEventListener("keypress", cardInsert);
     window.addEventListener("input", checkCardFlag);
