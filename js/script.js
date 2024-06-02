@@ -8,7 +8,7 @@ let onImgMonthly = document.querySelector("#image-monthly");
 let textMonthly = document.querySelector("#image-monthly ul");
 let onImgWeekly = document.querySelector("#image-weekly");
 let textWeekly = document.querySelector("#image-weekly ul");
-const card = document.getElementById("icard");
+const carD = document.getElementById("icard");
 const imageVisa = document.getElementById("image-visa");
 const imageElo = document.getElementById("image-elo");
 const imageMaster = document.getElementById("image-master");
@@ -86,12 +86,7 @@ function imgSwitchOff(image, text)
     text.style.opacity = `0`;
     image.style.height = ``;
 }
-onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
-onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
-onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
-onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
-onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
-onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
+
 
 function flagOn(flag)
 {
@@ -100,29 +95,29 @@ function flagOn(flag)
 function flagOff(flag)
 {
     flag.style.filter = ``;
-    card.style.outline = `2px solid white`;
+    carD.style.outline = `2px solid white`;
 }
 function checkCardFlag()
 {
-    let cardFlag = Number(card.value);
+    let cardFlag = Number(carD.value);
     
 
     if(cardFlag === 4)
     {
         flagOn(imageVisa);
-        isValid(card);
+        isValid(carD);
         inputParcel.style.display = `block`;
     }
     else if (cardFlag === 5)
     {
         flagOn(imageMaster);
-        isValid(card);
+        isValid(carD);
         inputParcel.style.display = `block`;
     }
     else if (cardFlag === 6)
     {
         flagOn(imageElo);
-        isValid(card);
+        isValid(carD);
         inputParcel.style.display = `block`;
     }
     else if (cardFlag == "")
@@ -162,10 +157,10 @@ function ticketSaleOff(num)
 
 function cardInsert()
 {
-    let cardLength = card.value.length;
+    let cardLength = carD.value.length;
     if(cardLength === 4 || cardLength === 9 || cardLength === 14)
     {
-        card.value += " ";
+        carD.value += " ";
     }
 }
 
@@ -236,11 +231,11 @@ function closeCard(container)
 {
     document.body.style.marginBlock = `0em`;
     container.style.display = `none`;
-    flagOff(card)
+    flagOff(carD)
     flagOff(imageVisa)
     flagOff(imageMaster)
     flagOff(imageElo)
-    card.value = "";
+    carD.value = "";
     inputName.style.outline = `2px solid white`;
     inputName.value = "";
     inputParcel.style.display = `none`;
@@ -332,24 +327,28 @@ function nameLength(nameLength)
 }
 
 
+setInterval(nextImage, 3000);
+carD.addEventListener("keypress", cardInsert);
+carD.addEventListener("input", checkCardFlag);
+inputName.addEventListener("input", checkName);
+inputParcel.addEventListener("load", parcelCard);
+inputCVV.addEventListener("input", checkCVV);
+inputDate.addEventListener("keypress", formatDate);
+inputDate.addEventListener("input", checkErrorDate);
+checkButton.addEventListener("click", () => ticketSaleOff(price));
+menuCard.addEventListener("click", () => showCard(containerCard));
+closeExec.addEventListener("click", () => closeCard(containerCard));
+menuPix.addEventListener("click", () => showCard(containerPix));
+closePix.addEventListener("click", () => closeCard(containerPix));
+showValue(ticketSaleOff(price), valueTot);
+showValue(priceMonth, containerTotMonth);
+showValue(priceWeek, containerTotWeek);
 
-document.addEventListener("DOMContentLoaded", () =>
-{
-    window.setInterval(nextImage, 3000);
-    card.addEventListener("keypress", cardInsert);
-    card.addEventListener("input", checkCardFlag);
-    window.addEventListener("input", checkName);
-    window.addEventListener("load", parcelCard);
-    inputCVV.addEventListener("input", checkCVV);
-    inputDate.addEventListener("keypress", formatDate);
-    inputDate.addEventListener("input", checkErrorDate);
-    checkButton.addEventListener("click", () => ticketSaleOff(price));
-    window.addEventListener("load", () => showValue(ticketSaleOff(price), valueTot));
-    window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
-    window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
-    menuCard.addEventListener("click", () => showCard(containerCard));
-    closeExec.addEventListener("click", () => closeCard(containerCard));
-    menuPix.addEventListener("click", () => showCard(containerPix));
-    closePix.addEventListener("click", () => closeCard(containerPix));
-});
+
+onImgYearly.addEventListener("click", () => imgSwitchOn(onImgYearly, textYearly));
+onImgYearly.addEventListener("mouseleave", () => imgSwitchOff(onImgYearly, textYearly));
+onImgMonthly.addEventListener("click", () => imgSwitchOn(onImgMonthly, textMonthly));
+onImgMonthly.addEventListener("mouseleave", () => imgSwitchOff(onImgMonthly, textMonthly));
+onImgWeekly.addEventListener("click", () => imgSwitchOn(onImgWeekly, textWeekly));
+onImgWeekly.addEventListener("mouseleave", () => imgSwitchOff(onImgWeekly, textWeekly));
 
