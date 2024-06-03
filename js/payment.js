@@ -43,7 +43,7 @@ function flagOn(flag)
 function flagOff(flag)
 {
     flag.style.filter = ``;
-    carD.style.outline = `2px solid white`;
+    carD.style.outline = ``;
 }
 function checkCardFlag()
 {
@@ -111,7 +111,7 @@ function checkCVV()
 
     if (cvvCurrent == ``)
     {
-        inputCVV.style.outline = `2px solid white`;
+        inputCVV.style.outline = ``;
     }
     else if(cvvCurrent > 3 || cvvCurrent < 3)
     {
@@ -128,17 +128,13 @@ function checkCVV()
     
 }
 
-function formatDate()
-{
-    
-    
-}
+
 function checkErrorDate()
 {
     let dataNew = inputDate.value.length;
     if(dataNew == "")
     {
-        inputDate.style.outline = `2px solid white`;
+        inputDate.style.outline = ``;
     }
     else if (dataNew === 5)
     {
@@ -166,21 +162,18 @@ function showCard(container)
 
 function closeCard(container)
 {
-    inputParcel.style.display = `none`;
     document.body.style.marginBlock = `0em`;
     container.style.display = `none`;
     flagOff(carD)
     flagOff(imageVisa)
     flagOff(imageMaster)
     flagOff(imageElo)
+    inputParcel.style.display = `none`;
     carD.value = "";
-    inputName.style.outline = `2px solid white`;
     inputName.value = "";
-    inputDate.style.outline = `2px solid white`;
-    inputCVV.style.outline = `2px solid white`;
     validatedInput.innerText = ``;
     inputCVV.value = "";
-    inputDate.value = "";
+    inputDate.value = null;
 }
 
 function closePix(container)
@@ -248,7 +241,7 @@ function checkName()
     let isName = inputName.value;
     if(isName == "")
     {
-        inputName.style.outline = `2px solid white`;
+        inputName.style.outline = ``;
     }
     else if(!regCharacter.test(isName) || !nameLength(isName))
     {
@@ -284,7 +277,6 @@ inputDate.addEventListener("keypress", () =>
         }
     });
 carD.addEventListener("input", checkCardFlag);
-carD.addEventListener("keydown", parcelCard);
 inputName.addEventListener("input", checkName);
 inputCVV.addEventListener("input", checkCVV);
 inputDate.addEventListener("input", checkErrorDate);
@@ -295,3 +287,4 @@ pixClose.addEventListener("click", () => closePix(containerPix));
 window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
 window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
 checkButton.addEventListener("click", () => ticketSaleOff(price));
+carD.addEventListener("keydown", parcelCard);
