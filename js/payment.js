@@ -154,7 +154,7 @@ function showCard(container)
     }
     else
     {
-        document.body.style.marginBlock = `5em`;
+        document.body.style.marginBlock = `9em`;
     }
     container.style.display = `flex`;
     
