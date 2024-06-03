@@ -4,36 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
-    <link rel="stylesheet" href="styles/payment-style.css">
+    <link rel="stylesheet" href="../styles/payment-style.css">
+    <link rel="stylesheet" href="../styles/media-payment.css">
 </head>
 <body>
     <main>
         <div id="container-image">
-            <img src="img/semanal.jpg" alt="Foto Anual">
+            <img src="../img/semanal.jpg" alt="Foto Anual">
             <ul>
-                <li> <img class="image-svg" src="img/washer.svg" alt=""> Horário: 15hrs ás 19hrs</li>
-                <li><img class="image-svg" src="img/washer.svg" alt=""> De Segunda á Sexta</li>
-                <li><img class="image-svg" src="img/washer.svg" alt=""> Sem direito a armário</li>
-                <li><img class="image-svg" src="img/washer.svg" alt=""> Sem direito ao estacionamento</li>
-                <li><img class="image-svg" src="img/washer.svg" alt=""> Sem sorteios</li>
+                <li> <img class="image-svg" src="../img/washer.svg" alt=""> Horário: 15hrs ás 19hrs</li>
+                <li><img class="image-svg" src="../img/washer.svg" alt=""> De Segunda á Sexta</li>
+                <li><img class="image-svg" src="../img/washer.svg" alt=""> Sem direito a armário</li>
+                <li><img class="image-svg" src="../img/washer.svg" alt=""> Sem direito ao estacionamento</li>
+                <li><img class="image-svg" src="../img/washer.svg" alt=""> Sem sorteios</li>
             </ul>     
         </div>
 
         <section id="menu-card" class="container-menu">
             <div id="container-card-menu" class="menu">
-                <div id="container-image-card"><img src="img/credit-card.svg" alt="Card Image"></div>
+                <div id="container-image-card"><img src="../img/credit-card.svg" alt="Card Image"></div>
                 <span>Cartão (Crédito ou Débito)</span>
             </div>
             <div class="progress-effect" id="progress-card"></div>
         </section>
 
         <section id="container-input-card">
-            <span id="close-card" class="close"><img src="img/close.svg" alt=""></span>
+            <span id="close-card" class="close"><img src="../img/close.svg" alt=""></span>
             <input type="text" name="name" id="iname" placeholder="Nome impresso no Cartão">
             <ul>
-                <li class="card" id="card-elo"><img id="image-elo" src="img/elo.svg" alt="Elo Icon"></li>
-                <li class="card" id="card-master"><img id="image-master" src="img/mastercard.svg" alt="MasterCard Icon"></li>
-                <li class="card" id="card-visa"><img id="image-visa" src="img/visa.svg" alt="Visa Icon"></li>
+                <li class="card" id="card-elo"><img id="image-elo" src="../img/elo.svg" alt="Elo Icon"></li>
+                <li class="card" id="card-master"><img id="image-master" src="../img/mastercard.svg" alt="MasterCard Icon"></li>
+                <li class="card" id="card-visa"><img id="image-visa" src="../img/visa.svg" alt="Visa Icon"></li>
             </ul>
             <input type="text" maxlength="19" name="card" id="icard" placeholder="Digite Número do Cartão" autocomplete="off">
             <span id="span">(Crédito ou Débito)</span>
@@ -51,7 +52,7 @@
         <section id="container-pix" class="container-menu">
             <div class="menu">
                 <div id="container-img-pix">
-                    <img src="img/pix.svg" alt="Pix Image">
+                    <img src="../img/pix.svg" alt="Pix Image">
                 </div>
                 <span>PIX</span>
             </div>
@@ -59,9 +60,9 @@
         </section>
 
         <section id="container-payment-pix">
-            <span id="close-pix" class="close"><img src="img/close.svg" alt=""></span>
+            <span id="close-pix" class="close"><img src="../img/close.svg" alt=""></span>
             <div id="container-qrcode">
-                <img src="img/qr-code.svg" alt="">
+                <img src="../img/qr-code.svg" alt="">
             </div>
             <span>Mire a câmera do celular para fazer o pagamento ou se preferir clique no link abaixo: <a href="https://qr.codes/gPM8yD" target="_blank" rel="noopener noreferrer">clique aqui</a></span>
         </section>
@@ -71,6 +72,6 @@
         </section>
         <button  id="payment-finale">Finalizar Pagamento</button>
     </main>
-<script src="js/script.js"></script>
+<script src="../js/payment.js"></script>
 </body>
 </html>
