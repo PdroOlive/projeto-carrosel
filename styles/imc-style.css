@@ -34,6 +34,7 @@
     object-fit: cover;
     filter: brightness(30%) grayscale(100);
     width: 100%;
+    min-height: 300px;
 }
 .container-carrosel > h1
 {

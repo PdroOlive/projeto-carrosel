@@ -18,12 +18,12 @@ const inputName = document.getElementById("iname");
 const menuCard = document.getElementById("menu-card");
 const menuPix = document.getElementById("container-pix");
 const closeExec = document.getElementById("close-card");
-const closePix = document.getElementById("close-pix");
+const pixClose = document.getElementById("close-pix");
 const checkButton = document.getElementById("check-button");
 
 let price = 1368;
-const priceMonth = 120;
-const priceWeek = 64.99;
+let priceMonth = 120;
+let priceWeek = 64.99;
 let calcResult = 0;
 const regCharacter = /^[a-záàâãéèêíïóôõöúçñ ]+$/i;
 
@@ -163,8 +163,10 @@ function showCard(container)
     container.style.display = `flex`;
     
 }
+
 function closeCard(container)
 {
+    inputParcel.style.display = `none`;
     document.body.style.marginBlock = `0em`;
     container.style.display = `none`;
     flagOff(carD)
@@ -174,7 +176,6 @@ function closeCard(container)
     carD.value = "";
     inputName.style.outline = `2px solid white`;
     inputName.value = "";
-    inputParcel.style.display = `none`;
     inputDate.style.outline = `2px solid white`;
     inputCVV.style.outline = `2px solid white`;
     validatedInput.innerText = ``;
@@ -182,7 +183,11 @@ function closeCard(container)
     inputDate.value = "";
 }
 
-
+function closePix(container)
+{
+    document.body.style.marginBlock = `0em`;
+    container.style.display = `none`;
+}
 
 function parcelCard()
 {
@@ -279,16 +284,14 @@ inputDate.addEventListener("keypress", () =>
         }
     });
 carD.addEventListener("input", checkCardFlag);
+carD.addEventListener("keydown", parcelCard);
 inputName.addEventListener("input", checkName);
-inputParcel.addEventListener("DomContentLoaded", parcelCard);
 inputCVV.addEventListener("input", checkCVV);
 inputDate.addEventListener("input", checkErrorDate);
-checkButton.addEventListener("click", () => ticketSaleOff(price));
 menuCard.addEventListener("click", () => showCard(containerCard));
 closeExec.addEventListener("click", () => closeCard(containerCard));
 menuPix.addEventListener("click", () => showCard(containerPix));
-closePix.addEventListener("click", () => closeCard(containerPix));
-
-showValue(ticketSaleOff(price), valueTot);
-showValue(priceMonth, containerTotMonth);
-showValue(priceWeek, containerTotWeek);
+pixClose.addEventListener("click", () => closePix(containerPix));
+window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
+window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
+checkButton.addEventListener("click", () => ticketSaleOff(price));
