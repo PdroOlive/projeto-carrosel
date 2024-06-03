@@ -82,7 +82,7 @@ function outputIMC()
 {
     if(discoverIMC() <= 18.5)
     {
-        downloadFile.href = `dieta-para-ganhar-massa.pdf`;
+        downloadFile.href = `download/dieta-para-ganhar-massa.pdf`;
         downloadFile.download = `dieta-para-ganhar-massa.pdf`;
         downloadFile.type = `application/pdf`;
         downloadFile.innerHTML = `DIETA PARA GANHAR MASSA`;
@@ -90,7 +90,7 @@ function outputIMC()
     }
     else if(discoverIMC() >= 18.6 && discoverIMC() <= 24.9)
     {
-        downloadFile.href = `dieta-para-ganhar-massa.pdf`;
+        downloadFile.href = `download/dieta-para-ganhar-massa.pdf`;
         downloadFile.download = `dieta-para-ganhar-massa.pdf`;
         downloadFile.type = `application/pdf`;
         downloadFile.innerHTML = `DIETA PARA GANHAR MASSA`;
@@ -98,7 +98,7 @@ function outputIMC()
     }
     else if(discoverIMC() >= 25 && discoverIMC() <= 29.9)
     {
-        downloadFile.href = `dieta-para-perder-peso.pdf`;
+        downloadFile.href = `download/dieta-para-perder-peso.pdf`;
         downloadFile.download = `dieta-para-perder-peso.pdf`;
         downloadFile.type = `application/pdf`;
         downloadFile.innerHTML = `DIETA PARA PERDER PESO`;
@@ -106,7 +106,7 @@ function outputIMC()
     }
     else if(discoverIMC() >= 30)
     {
-        downloadFile.href = `dieta-para-perder-peso.pdf`;
+        downloadFile.href = `download/dieta-para-perder-peso.pdf`;
         downloadFile.download = `dieta-para-perder-peso.pdf`;
         downloadFile.type = `application/pdf`;
         downloadFile.innerHTML = `DIETA PARA PERDER PESO`;
