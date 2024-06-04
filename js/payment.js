@@ -148,25 +148,7 @@ function checkErrorDate()
 }
 
 
-function showCard(container)
-{
-    container.style.display = `flex`;
-}
 
-function closeCard(container)
-{
-    container.style.display = `none`;
-    flagOff(carD)
-    flagOff(imageVisa)
-    flagOff(imageMaster)
-    flagOff(imageElo)
-    carD.value = "";
-    inputName.value = "";
-    validatedInput.innerText = ``;
-    inputCVV.value = "";
-    inputDate.value = null;
-    inputParcel.style.display = `none`;
-}
 
 function closePix(container)
 {
@@ -252,6 +234,25 @@ function nameLength(nameLength)
     return nameArray.length >= 2;
 }
 
+function showCard(container)
+{
+    container.style.display = `flex`;
+}
+
+function closeCard(container)
+{
+    container.style.display = `none`;
+    flagOff(imageVisa)
+    flagOff(imageMaster)
+    flagOff(imageElo)
+    carD.value = "";
+    inputName.value = "";
+    validatedInput.innerText = ``;
+    inputCVV.value = "";
+    inputDate.value = null;
+    inputParcel.style.display = `none`;
+}
+
 carD.addEventListener("keypress", () =>
 {
     let cardLength = carD.value.length;
@@ -278,8 +279,6 @@ menuCard.addEventListener("click", () => showCard(containerCard));
 closeExec.addEventListener("click", () => closeCard(containerCard));
 menuPix.addEventListener("click", () => showCard(containerPix));
 pixClose.addEventListener("click", () => closePix(containerPix));
-window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
-window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
 checkButton.addEventListener("click", () => ticketSaleOff(price));
 carD.addEventListener("keydown", parcelCard);
 
