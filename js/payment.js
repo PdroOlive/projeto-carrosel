@@ -21,6 +21,7 @@ const closeExec = document.getElementById("close-card");
 const pixClose = document.getElementById("close-pix");
 const checkButton = document.getElementById("check-button");
 
+
 let price = 1368;
 let priceMonth = 120;
 let priceWeek = 64.99;
@@ -146,34 +147,25 @@ function checkErrorDate()
     }
 }
 
+
 function showCard(container)
 {
-    if(innerWidth >= 1201)
-    {
-        document.body.style.marginBlock = `0em`;
-    }
-    else
-    {
-        document.body.style.marginBlock = `9em`;
-    }
     container.style.display = `flex`;
-    
 }
 
 function closeCard(container)
 {
-    document.body.style.marginBlock = `0em`;
     container.style.display = `none`;
     flagOff(carD)
     flagOff(imageVisa)
     flagOff(imageMaster)
     flagOff(imageElo)
-    inputParcel.style.display = `none`;
     carD.value = "";
     inputName.value = "";
     validatedInput.innerText = ``;
     inputCVV.value = "";
     inputDate.value = null;
+    inputParcel.style.display = `none`;
 }
 
 function closePix(container)
@@ -276,6 +268,8 @@ inputDate.addEventListener("keypress", () =>
             inputDate.value += "/";
         }
     });
+
+
 carD.addEventListener("input", checkCardFlag);
 inputName.addEventListener("input", checkName);
 inputCVV.addEventListener("input", checkCVV);
@@ -288,3 +282,4 @@ window.addEventListener("load", () => showValue(priceMonth, containerTotMonth));
 window.addEventListener("load", () => showValue(priceWeek, containerTotWeek));
 checkButton.addEventListener("click", () => ticketSaleOff(price));
 carD.addEventListener("keydown", parcelCard);
+

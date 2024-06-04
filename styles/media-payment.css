@@ -10,6 +10,10 @@
     {
         height: 300px;
     }
+    #container-input-card input
+    {
+        width: 400px;
+    }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px)
@@ -21,6 +25,10 @@
     #container-image
     {
         height: 300px;
+    }
+    #container-input-card input
+    {
+        width: 400px;
     }
 }
 @media screen and (min-width: 1201px)
@@ -35,6 +43,10 @@
     #container-inputs
     {
         width: 700px;
+    }
+    #container-input-card input
+    {
+        width: 300px;
     }
     #container-image > img
     {
