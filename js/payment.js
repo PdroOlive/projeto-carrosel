@@ -271,10 +271,10 @@ inputDate.addEventListener("keypress", () =>
     });
 
 
-carD.addEventListener("input", checkCardFlag);
+window.addEventListener("input", checkCardFlag);
 inputName.addEventListener("input", checkName);
 inputCVV.addEventListener("input", checkCVV);
-inputDate.addEventListener("input", checkErrorDate);
+window.addEventListener("input", checkErrorDate);
 menuCard.addEventListener("click", () => showCard(containerCard));
 closeExec.addEventListener("click", () => closeCard(containerCard));
 menuPix.addEventListener("click", () => showCard(containerPix));
