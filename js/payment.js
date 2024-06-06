@@ -253,7 +253,7 @@ function closeCard(container)
     inputParcel.style.display = `none`;
 }
 
-window.addEventListener("keypress", () =>
+window.addEventListener("keydown", () =>
 {
     let cardLength = carD.value.length;
     if(cardLength === 4 || cardLength === 9 || cardLength === 14)
