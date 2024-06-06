@@ -247,13 +247,14 @@ function closeCard(container)
     flagOff(imageElo)
     carD.value = "";
     inputName.value = "";
-    validatedInput.innerText = ``;
+    validatedInput.innerText = "";
     inputCVV.value = "";
-    inputDate.value = null;
+    inputDate.value = "";
     inputParcel.style.display = `none`;
 }
 
-window.addEventListener("keypress", () =>
+
+carD.addEventListener("keypress", () =>
 {
     let cardLength = carD.value.length;
     if(cardLength === 4 || cardLength === 9 || cardLength === 14)
@@ -271,7 +272,7 @@ window.addEventListener("keypress", () =>
     });
 
 
-window.addEventListener("input", checkCardFlag);
+carD.addEventListener("input", checkCardFlag);
 inputName.addEventListener("input", checkName);
 inputCVV.addEventListener("input", checkCVV);
 window.addEventListener("input", checkErrorDate);
