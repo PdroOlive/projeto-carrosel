@@ -263,13 +263,13 @@ carD.addEventListener("keypress", () =>
     }
 });
 window.addEventListener("keypress", () =>
+{
+    let dataNew = inputDate.value.length;
+    if(dataNew === 2)
     {
-        let dataNew = inputDate.value.length;
-        if(dataNew === 2)
-        {
-            inputDate.value += "/";
-        }
-    });
+        inputDate.value += "/";
+    }
+});
 
 
 carD.addEventListener("input", checkCardFlag);
