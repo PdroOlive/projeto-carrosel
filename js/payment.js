@@ -253,7 +253,7 @@ function closeCard(container)
     inputParcel.style.display = `none`;
 }
 
-carD.addEventListener("keypress", () =>
+window.addEventListener("keypress", () =>
 {
     let cardLength = carD.value.length;
     if(cardLength === 4 || cardLength === 9 || cardLength === 14)
@@ -261,7 +261,7 @@ carD.addEventListener("keypress", () =>
         carD.value += " ";
     }
 });
-inputDate.addEventListener("keypress", () =>
+window.addEventListener("keypress", () =>
     {
         let dataNew = inputDate.value.length;
         if(dataNew === 2)
